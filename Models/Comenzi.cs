@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite;
-
+using SQLiteNetExtensions.Attributes;
 
 namespace AplicatieMobila.Models
 {
@@ -15,6 +15,8 @@ namespace AplicatieMobila.Models
         [MaxLength(250), Unique]
         public string Description { get; set; }
         public DateTime DateComanda { get; set; }
+        [ForeignKey(typeof(Magazin))]
+        public int MagazinID { get; set; }
 
     }
 }

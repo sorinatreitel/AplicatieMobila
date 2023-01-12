@@ -16,6 +16,7 @@ namespace AplicatieMobila.Data
             _database.CreateTableAsync<Comenzi>().Wait();
             _database.CreateTableAsync<Echipament>().Wait();
             _database.CreateTableAsync<ListEchipament>().Wait();
+            _database.CreateTableAsync<Magazin>().Wait();
         }
         public Task<int> SaveListEchipamentAsync(ListEchipament listp)
         {
@@ -55,9 +56,9 @@ namespace AplicatieMobila.Data
         {
             return _database.Table<Echipament>().ToListAsync();
         }
-   
 
-public Task<List<Comenzi>> GetComenzisAsync()
+
+        public Task<List<Comenzi>> GetComenzisAsync()
         {
             return _database.Table<Comenzi>().ToListAsync();
         }
@@ -90,6 +91,26 @@ public Task<List<Comenzi>> GetComenzisAsync()
         {
             return _database.QueryAsync<ListEchipament>("select * from ListEchipament");
         }
-    }
+        public Task<List<Magazin>> GetMagazineAsync()
+        {
+            return _database.Table<Magazin>().ToListAsync();
+        }
+        public Task<int> SaveMagazinAsync(Magazin shop)
+        {
+            if (shop.ID != 0)
+            {
+                return _database.UpdateAsync(shop);
+            }
+            else
+            {
+                return _database.InsertAsync(shop);
+            }
 
+        }
+        public Task<int> DeleteMagazinAsync(Magazin shop)
+        {
+            return _database.DeleteAsync(shop);
+        }
+
+    }
 }

@@ -26,6 +26,9 @@ public partial class ComenziPage : ContentPage
     {
         base.OnAppearing();
         var shopl = (Comenzi)BindingContext;
+        var items = await App.Database.GetMagazineAsync();
+        ShopPicker.ItemsSource = (System.Collections.IList)items;
+        ShopPicker.ItemDisplayBinding = new Binding("ShopDetails");
 
         listView.ItemsSource = await App.Database.GetListEchipamenteAsync(shopl.ID);
     }
@@ -42,6 +45,8 @@ public partial class ComenziPage : ContentPage
     {
         var slist = (Comenzi)BindingContext;
         slist.DateComanda = DateTime.UtcNow;
+        Magazin selectedShop = (ShopPicker.SelectedItem as Magazin);
+        slist.MagazinID = selectedShop.ID;
         await App.Database.SaveComenziAsync(slist);
         await Navigation.PopAsync();
     }

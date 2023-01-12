@@ -11,12 +11,15 @@
  Title="Magazin"
  ContentTemplate="{DataTemplate local:MainPage}"
  />
-        <ShellContent Title="Despre" ContentTemplate="{DataTemplate local:Despre}"
- />
+        
         <ShellContent
  Title="Lista Comenzi"
- ContentTemplate="{DataTemplate local:ComenziEntryPage}"
+ ContentTemplate="{DataTemplate local:ComenziEntryPage}"/>
+        <ShellContent
+ Title="My Shops"
+ ContentTemplate="{DataTemplate local:MagazinEntryPage}"
  />
+        <ShellContent Title="Despre" ContentTemplate="{DataTemplate local:Despre}"/>
     </TabBar>
 
 </Shell>
