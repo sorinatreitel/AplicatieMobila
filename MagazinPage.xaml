@@ -5,10 +5,10 @@
              Title="Magazine">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Enter shop name" Margin="20"
+            <Editor Placeholder="Numele magazinului" Margin="20"
  Text="{Binding ShopName}"
  HeightRequest="50" />
-            <Editor Placeholder="Enter shop adress" Margin="20"
+            <Editor Placeholder="Adresa magazinului" Margin="20"
  Text="{Binding Adress}"
  HeightRequest="50" />
             <Grid>
@@ -21,8 +21,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Shop" Grid.Column="0" MaximumWidthRequest="200" Clicked="OnSaveButtonClicked" />
-                <Button Text="Delete Shop" Grid.Column="1" MaximumWidthRequest="200" Clicked="OnDeleteButtonClicked" />
+                <Button Text="Salveaza Magazin" Grid.Column="0" MaximumWidthRequest="200" Clicked="OnSaveButtonClicked" />
+                <Button Text="Sterge Magazin" Grid.Column="1" MaximumWidthRequest="200" Clicked="OnDeleteButtonClicked" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>

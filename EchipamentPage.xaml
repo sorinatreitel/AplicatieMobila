@@ -2,12 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AplicatieMobila.EchipamentPage"
-             Title="EchipamentPage"
-             xmlns:local="clr-namespace:AplicatieMobila">
+             Title="Echipament">
             
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Adauga produs" Margin="20"
+            <Editor Placeholder="Adauga produs in lista" Margin="20"
  Text="{Binding Description}"
  HeightRequest="50" />
             <Grid>
@@ -20,11 +19,11 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Product" MaximumWidthRequest="200"
+                <Button Text="Salveaza Produs" MaximumWidthRequest="200"
  Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1"
- Text="Delete"
- Clicked="OnDeleteButtonClicked"/>
+ Text="Sterge Produs" MaximumWidthRequest="200"
+ Clicked="OnDeleteButtonClicked" />
                 <ListView Grid.Row="1" Grid.Column="0" x:Name="listView"
  Margin="20" IsRefreshing="True" >
                     <ListView.ItemTemplate>
@@ -33,7 +32,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Grid.Row="2" Grid.Column="0" Text="Add to cart"
+                <Button Grid.Row="2" Grid.Column="0" Text="Adauga in lista"
 MaximumWidthRequest="200"
  Clicked="OnAddButtonClicked" />
             </Grid>

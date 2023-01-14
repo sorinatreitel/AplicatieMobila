@@ -16,7 +16,7 @@
  Title="Lista Comenzi"
  ContentTemplate="{DataTemplate local:ComenziEntryPage}"/>
         <ShellContent
- Title="My Shops"
+ Title="Magazine"
  ContentTemplate="{DataTemplate local:MagazinEntryPage}"
  />
         <ShellContent Title="Despre" ContentTemplate="{DataTemplate local:Despre}"/>

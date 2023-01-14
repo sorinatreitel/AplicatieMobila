@@ -11,6 +11,26 @@ public partial class EchipamentPage : ContentPage
 		InitializeComponent();
         sl = slist;
     }
+    async void OnSaveButtonClicked(object sender, EventArgs e)
+    {
+        var product = (Echipament)BindingContext;
+        await App.Database.SaveEchipamentAsync(product);
+        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
+    }
+
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var product = (Echipament)BindingContext;
+        await App.Database.DeleteEchipamentAsync(product);
+        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
+    }
+
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
+    }
     async void OnAddButtonClicked(object sender, EventArgs e)
     {
         Echipament p;
@@ -26,23 +46,6 @@ public partial class EchipamentPage : ContentPage
             p.ListEchipamente = new List<ListEchipament> { lp };
             await Navigation.PopAsync();
         }
-    }
-        async void OnSaveButtonClicked(object sender, EventArgs e)
-    {
-        var product = (Echipament)BindingContext;
-        await App.Database.SaveEchipamentAsync(product);
-        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
-    }
-    async void OnDeleteButtonClicked(object sender, EventArgs e)
-    {
-        var product = (Echipament)BindingContext;
-        await App.Database.DeleteEchipamentAsync(product);
-        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
-    }
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetEchipamenteAsync();
     }
 
 }

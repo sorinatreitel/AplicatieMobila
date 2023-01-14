@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AplicatieMobila.ComenziPage"
-             Title="ComenziPage">
+             Title="Comenzi">
     <ContentPage.Content xmlns:local="clr-namespace:AplicatieMobila">
     <StackLayout Margin="20">
         <Editor Placeholder="Introduceti numele"
@@ -12,16 +12,16 @@
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
             </Editor>
-            <Picker x:Name="ShopPicker" Title="Enter Shop Name"/>
+            <Picker x:Name="ShopPicker" Title="Numele magazinului"/>
             <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save"
+            <Button Text="Salveaza"
  Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
- Text="Delete"
+ Text="Sterge"
  Clicked="OnDeleteButtonClicked"/>
         </Grid>
         <ListView x:Name="listView"
@@ -32,8 +32,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300"
-Clicked="OnChooseButtonClicked"/>            <Button Text="Delete item" MaximumWidthRequest="300" Clicked="OnDeleteItemButtonClicked"/>
+        <Button Text="Adauga/Alege produs pentru a cumpara" MaximumWidthRequest="300"
+Clicked="OnChooseButtonClicked"/>            <Button Text="Sterge din lista" MaximumWidthRequest="300" Clicked="OnDeleteItemButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
