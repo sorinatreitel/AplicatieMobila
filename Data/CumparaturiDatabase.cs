@@ -48,9 +48,9 @@ namespace AplicatieMobila.Data
                 return _database.InsertAsync(echipament);
             }
         }
-        public Task<int> DeleteEchipamentAsync(Echipament echipament)
+        public Task<int> DeleteEchipamentAsync(Echipament product)
         {
-            return _database.DeleteAsync(echipament);
+            return _database.DeleteAsync(product);
         }
         public Task<List<Echipament>> GetEchipamenteAsync()
         {
