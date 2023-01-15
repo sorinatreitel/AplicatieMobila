@@ -10,7 +10,7 @@
             VerticalOptions="Center">
 
             <Image
-                Source="iarna.png"
+                Source="ski.png"
                 SemanticProperties.Description=""
                 HeightRequest="200"
                 HorizontalOptions="Center" />
@@ -22,7 +22,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Magazin Echipamente Sky"
+                Text=" Magain SkyBlue"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Bun venit la magazinul nostru"
                 FontSize="18"
